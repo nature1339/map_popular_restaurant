@@ -6,31 +6,33 @@ import Markers from "@/components/Markers";
 import * as stores from "@/data/store_data.json";
 import StoreBox from "@/StoreBox";
 
-export default function Home({stores: StoreType[]}) {
+export default function Home({ stores }: any) {
   const [map, setMap] = useState(null);
   const [currentStore, setCurrentStore] = useState(null);
-  
+
   return (
     <>
       <Map setMap={setMap} />
-      <Markers stores={stores} map={map}setCurrentStore={setCurrentStore} />
-      //markers라는 component에 stores data전달가능
+      <Markers stores={stores} map={map} setCurrentStore={setCurrentStore} />
+      {/**markers라는 component에 stores data전달가능*/}
       <StoreBox store={currentStore} setStore={setCurrentStore} />
-      // 현재선택한 store를 storebox에서 보여줄수있음 // setCurrentStore했을때
+      {/**
+      현재선택한 store를 storebox에서 보여줄수있음 setCurrentStore했을때
       null값으로 변경가능
+    */}
     </>
   );
 }
 
 export async function getStaticProps() {
-  const stores =await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}`)) / api / stores`
-  ).then((res)=> res.json()); //response를 json으로 변경한후에 위
-  import * as stores from "@/data/store_data.json";에 전달
+  const stores = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`).then((res) =>
+    res.json()
+  ); //response를 json으로 변경한후에 위
+  //import * as stores from "@/data/store_data.json";에 전달//}
 
   return {
-    props: {stores},
-    revalidate: 60*60,
+    props: { stores },
+    revalidate: 60 * 60,
   };
 }
 

@@ -9,7 +9,7 @@ async function seedData() {
       phone: store?.tel_no,
       address: store?.rdn_code_nm,
       lat: store?.y_dnts,
-      lng: store?.xcnts,
+      lng: store?.x_cnts,
       name: store?.upso_nm,
       category: store?.bizcnd_code_nm,
       storeType: store?.cob_code_nm,

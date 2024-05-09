@@ -1,4 +1,10 @@
-import { useState, useCallback, Dispatch, SetStateAction } from "react";
+import {
+  useState,
+  useCallback,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+} from "react";
 
 interface MarkerProps {
   map: any;
@@ -6,8 +12,8 @@ interface MarkerProps {
   setCurrentStore: Dispatch<SetStateAction<any>>;
 }
 
-export default function Markers({map, stores, setCurrentStore}: MarkerProps) {
-  const loadKakoMarkers = useCallback() => {
+export default function Markers({ map, stores, setCurrentStore }: MarkerProps) {
+  const loadKakoMarkers = useCallback(() => {
     if (map) {
       // 식당 데이터 마커 띄우기
       stores?.map((store) => {
@@ -67,7 +73,7 @@ export default function Markers({map, stores, setCurrentStore}: MarkerProps) {
         });
       });
     }
-  }, [map, setCurrentStore, storeDatas]);
+  }, [map, setCurrentStore, stores]);
 
   useEffect(() => {
     loadKakoMarkers();

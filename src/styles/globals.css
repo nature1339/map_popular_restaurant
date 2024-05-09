@@ -526,24 +526,23 @@ input:checked + .carousel__slide-container .nav label {
   /* .navbar_button {
     display: black;
     padding: 0px 18px; */
-    @apply block px-[18px] py-0;
-  }
-  .navbar_list--item--mobile {
-    /* display: none; */
-    @apply cursor-pointer;
-  }
-  .navbar_list--item--mobile:hover {
-    /* color: gray; */
-    @apply text-gray-600;
-  }
-  .navbar_list--mobile {
-    /* display: flex;
+  /* @apply block px-[18px] py-0; */
+}
+.navbar_list--item--mobile {
+  /* display: none; */
+  @apply cursor-pointer;
+}
+.navbar_list--item--mobile:hover {
+  /* color: gray; */
+  @apply text-gray-600;
+}
+.navbar_list--mobile {
+  /* display: flex;
     flex-direction: column;
     gap: 16px;
     align-items: start;
     padding: 24px 18px; */
-    @apply flex flex-col gap-4 px-[18px] py-6;
-  }
+  @apply flex flex-col gap-4 px-[18px] py-6;
 }
 
 .infowindow {
